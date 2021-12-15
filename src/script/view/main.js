@@ -7,10 +7,10 @@
 // Scripts
 // 
 
-window.addEventListener('DOMContentLoaded', event => {
+const main = function () {
 
     // Navbar shrink function
-    var navbarShrink = function () {
+    const navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
         if (!navbarCollapsible) {
             return;
@@ -56,4 +56,4 @@ window.addEventListener('DOMContentLoaded', event => {
         elements: '#portfolio a.portfolio-box'
     });
 
-});
+};
