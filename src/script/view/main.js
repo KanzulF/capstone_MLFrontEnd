@@ -6,11 +6,13 @@
 //
 // Scripts
 // 
+// import DataSource from '../data/data-source.js';
 
-const main = function () {
+const main = () => {
 
+    console.log("asdasd");
     // Navbar shrink function
-    const navbarShrink = function () {
+    const navbarShrink = () => {
         const navbarCollapsible = document.body.querySelector('#mainNav');
         if (!navbarCollapsible) {
             return;
@@ -24,7 +26,7 @@ const main = function () {
     };
 
     // Shrink the navbar 
-    navbarShrink();
+    // navbarShrink();
 
     // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
@@ -43,7 +45,7 @@ const main = function () {
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
     );
-    responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItems.map((responsiveNavItem) => {
         responsiveNavItem.addEventListener('click', () => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
                 navbarToggler.click();
@@ -56,4 +58,48 @@ const main = function () {
         elements: '#portfolio a.portfolio-box'
     });
 
+
+    const nameElement = document.querySelector("#inputName");
+    const nimElement = document.querySelector("#inputNIM");
+    const keywordsElement = document.querySelector("#inputKeywords");
+    
+    const buttonSearchElement = document.querySelector("#submitButton");
+
+    const onButtonSearchClicked =  () => {
+        const dataSource = new DataSource(renderResult, fallbackResult);
+        // console.log(nameElement.value);
+        // console.log(nimElement.value);
+        // console.log(keywordsElement.value);
+        
+        dataSource.searchBook(searchElement.value);
+    };
+
+    var renderResult = function (results) {
+        clubListElement.innerHTML = "";
+        results.forEach(function (club) {
+            var name = club.name;
+            var fanArt = club.fanArt;
+            var description = club.description;
+
+            var clubElement = document.createElement("div");
+            clubElement.setAttribute("class", "club");
+
+            clubElement.innerHTML = '<img class="fan-art-club" src="' + fanArt + '" alt="Fan Art">\n' +
+                '<div class="club-info">\n' +
+                '<h2>' + name + '</h2>\n' +
+                '<p>' + description + '</p>' +
+                '</div>';
+            clubListElement.appendChild(clubElement);
+        })
+    };
+
+    var fallbackResult = function (message) {
+        clubListElement.innerHTML = "";
+        clubListElement.innerHTML += '<h2 class="placeholder">' + message + '</h2>'
+    };
+
+    buttonSearchElement.addEventListener("click", onButtonSearchClicked);
+
 };
+
+export default main;
