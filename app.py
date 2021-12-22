@@ -57,11 +57,17 @@ def result():
     # validasi
 
     model = recommended()
-    predict = books_recommendations(keyword, model)
-    predict = predict['Title'].tolist()
+
+    try:
+        predict = books_recommendations(keyword, model)
+        predict = predict['Title'].tolist()
+        kondisi = True
+    except:
+        predict = str(keyword) + " Not Found"
+        kondisi = False
 
 
-    return render_template('index.html', rekomendasi = predict)
+    return render_template('index.html', rekomendasi = predict, kondisi = kondisi)
     
 
 
