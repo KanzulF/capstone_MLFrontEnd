@@ -24,18 +24,26 @@ class AppSearchBook extends HTMLElement {
                   <!-- Phone number input-->
                   <div class="form-floating mb-3">
                       <input class="form-control" id="inputNIM" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                      <label for="phone">NIM</label>
-                      <div class="invalid-feedback" data-sb-feedback="phone:required">A NIM is required.</div>
+                      <label for="NIM">NIM</label>
+                      <div class="invalid-feedback" data-sb-feedback="NIM:required">A NIM is required.</div>
                   </div>
                   <!-- Phone number input-->
                   <div class="form-floating mb-3">
-                      <input class="form-control" id="inputKeywords" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                      <label for="phone">Book Information</label>
-                      <div class="invalid-feedback" data-sb-feedback="phone:required">A think about book is required.</div>
+                      <input class="form-control" id="inputKeyword" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                      <label for="keyword">Book Information</label>
+                      <div class="invalid-feedback" data-sb-feedback="keyword:required">A think about book is required.</div>
                   </div>
                   <!-- Submit Button-->
                   <div class="d-grid"><button class="btn btn-light btn-xl" id="submitButton" type="submit">Submit</button></div>
+                  <center><input class="file_submit" type="Submit"></center>
               </form>
+              {% if name %}
+              <center>
+                <h3 style="color: blue;" class="let_space">Hello {{rekom}}, How was your day!!</h3>
+              </center> 
+              <h1>asdsadasd</h1>
+  
+            {% endif %}
 
           </div>
       </div>
