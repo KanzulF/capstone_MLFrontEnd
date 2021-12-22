@@ -18,7 +18,7 @@ def home():
 def result():
     output = request.form.to_dict()
     print(output)
-    keyword = output["inputKeyword"]
+    keyword = output["keyword"]
 
 
 
@@ -56,11 +56,11 @@ def result():
     # validasi = df[df.title.eq('The Tenth Circle')]
     # validasi
 
-    # model = recommended()
-    # predict = books_recommendations(keyword, model)
+    model = recommended()
+    predict = books_recommendations(keyword, model)
 
 
-    return render_template('index.html', rekom = keyword)
+    return render_template('index.html', rekomendasi = predict)
     
 
 
