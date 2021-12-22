@@ -37,14 +37,6 @@ class AppSearchBook extends HTMLElement {
                   <div class="d-grid"><button class="btn btn-light btn-xl" id="submitButton" type="submit">Submit</button></div>
                   <center><input class="file_submit" type="Submit"></center>
               </form>
-              {% if name %}
-              <center>
-                <h3 style="color: blue;" class="let_space">Hello {{rekom}}, How was your day!!</h3>
-              </center> 
-              <h1>asdsadasd</h1>
-  
-            {% endif %}
-
           </div>
       </div>
   </div>

@@ -56,11 +56,11 @@ def result():
     # validasi = df[df.title.eq('The Tenth Circle')]
     # validasi
 
-    model = recommended()
-    predict = books_recommendations(keyword, model)
+    # model = recommended()
+    # predict = books_recommendations(keyword, model)
 
 
-    return render_template('index.html', rekom = predict)
+    return render_template('index.html', rekom = keyword)
     
 
 
