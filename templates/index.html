@@ -51,13 +51,13 @@
                             <!-- Submit Button-->
                             <div class="d-grid"><button class="btn btn-light btn-xl" id="submitButton" type="submit">Submit</button></div>
           
-                            {% if rekomendasi %}
+                            {% for i in rekomendasi %}
                             <center>
-                              <h3 style="color: blue;" class="let_space">Hello {{rekomendasi}}, How was your day!!</h3>
+                              <h3 style="color: blue;" class="let_space">Hello {{i}}, How was your day!!</h3>
                             </center> 
                             <h1>asdsadasd</h1>
                 
-                          {% endif %}
+                          {% endfor %}
                             
                         </form>
                     </div>

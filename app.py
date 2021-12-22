@@ -24,7 +24,7 @@ def result():
 
     def recommended():
         #Load & Preprocessed Data
-        books = pd.read_csv('/content/Books.csv')
+        books = pd.read_csv('static/script/data/Books.csv')
         books.head(5)
 
         #Split data into features and target
@@ -58,6 +58,7 @@ def result():
 
     model = recommended()
     predict = books_recommendations(keyword, model)
+    predict = predict['Title'].tolist()
 
 
     return render_template('index.html', rekomendasi = predict)
